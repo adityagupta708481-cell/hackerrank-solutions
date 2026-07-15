@@ -7,6 +7,11 @@
 // Language    cpp14
 // Status      Accepted
 // Submitted   2026-07-15, 10:40 p.m.
+// Technique   range-based-for-loop
+// Time        O(n)
+// Space       O(n)
+// Trick       The simpleArraySum function uses a range-based for loop to accumulate the sum of elements in the vector.
+// Hint        stoi throws invalid_argument if the input string is not numeric.
 // ──────────────────────────────────────────────────
 
 #include <bits/stdc++.h>
