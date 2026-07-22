@@ -7,6 +7,11 @@
 // Language    cpp20
 // Status      Accepted
 // Submitted   2026-07-22, 11:56 a.m.
+// Technique   greedy-look-back
+// Time        O(n)
+// Space       O(n)
+// Trick       The algorithm uses a greedy approach by searching backwards from the furthest reachable index using the min function to ensure coverage.
+// Hint        min(i+k-1, n-1) prevents out-of-bounds access on the city vector.
 // ──────────────────────────────────────────────────
 
 #include<bits/stdc++.h>
