@@ -7,6 +7,12 @@
 // Language    cpp20
 // Status      Accepted
 // Submitted   2026-07-29, 12:24 p.m.
+// Technique   triple-reverse-array-rotation
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm performs a left rotation by reversing the entire array, then reversing the two segments created by the split point at n-d to restore their original relative order.
+// Interview   Before: "I could create a new array and copy elements using modulo arithmetic." After: "I used a triple-reverse approach to achieve O(n) time and O(1) auxiliary space, which handles the rotation efficiently even when d is greater than the array size n."
+// Pitfalls    (1) Failing to account for d > n by not using modulo arithmetic if d were not guaranteed to be within bounds.  (2) Incorrectly calculating the split index n as arr.size() - d, which assumes d is always less than or equal to the array size.
 // ──────────────────────────────────────────────────
 
 #include <bits/stdc++.h>
