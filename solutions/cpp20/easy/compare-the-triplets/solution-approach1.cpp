@@ -7,6 +7,12 @@
 // Language    cpp20
 // Status      Accepted
 // Submitted   2026-07-30, 02:50 a.m.
+// Technique   linear-scan-comparison
+// Time        O(1)
+// Space       O(1)
+// Insight     The algorithm iterates through the fixed-size triplets once, incrementing the respective score counter only when a strict inequality is satisfied.
+// Interview   Before: "How would you compare two sets of three scores?" After: "I iterate through the vectors and compare elements at each index, incrementing the winner's score. This runs in O(1) time since the input size is fixed at three, handling the equality case by awarding no points."
+// Pitfalls    (1) Failing to handle the equality case where a[i] equals b[i], which results in no points awarded to either participant.  (2) Assuming the input vectors might have different lengths, although the problem constraints strictly define them as triplets.
 // ──────────────────────────────────────────────────
 
 #include <bits/stdc++.h>
