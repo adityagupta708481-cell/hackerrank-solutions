@@ -7,6 +7,12 @@
 // Language    cpp20
 // Status      Accepted
 // Submitted   2026-07-30, 02:54 a.m.
+// Technique   linear-accumulation-long-integer
+// Time        O(n)
+// Space       O(n)
+// Insight     The implementation iterates through the input vector once, accumulating the sum into a 64-bit long variable to prevent overflow.
+// Interview   Before: "I will use a standard integer to sum the array." After: "I used a long type to accommodate values up to 10^10, ensuring the O(n) summation does not overflow the 32-bit integer limit specified in the constraints."
+// Pitfalls    (1) Using a 32-bit int instead of a long type will cause integer overflow when the sum exceeds 2,147,483,647.  (2) Failing to account for the input constraints where individual elements can reach 10^10 requires a 64-bit integer type for the accumulator.
 // ──────────────────────────────────────────────────
 
 #include <bits/stdc++.h>
