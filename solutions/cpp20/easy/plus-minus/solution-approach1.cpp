@@ -7,6 +7,12 @@
 // Language    cpp20
 // Status      Accepted
 // Submitted   2026-08-01, 07:43 p.m.
+// Technique   linear-scan-counter
+// Time        O(n)
+// Space       O(n)
+// Insight     The algorithm iterates through the array once to maintain three separate counters for positive, negative, and zero values, then calculates their respective ratios relative to the total array size.
+// Interview   Before: "How would you calculate the proportions of different integer types in an array?" After: "I would perform a single O(n) linear scan to count occurrences of positive, negative, and zero values, then divide each by the total size n to achieve the required O(n) time and O(n) space complexity."
+// Pitfalls    (1) Failing to use floating-point division, which results in integer truncation and incorrect ratios.  (2) Assuming the input array size n is always greater than zero without considering potential division by zero.
 // ──────────────────────────────────────────────────
 
 #include <bits/stdc++.h>
