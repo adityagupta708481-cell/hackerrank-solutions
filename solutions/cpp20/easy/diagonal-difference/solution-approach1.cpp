@@ -7,6 +7,12 @@
 // Language    cpp20
 // Status      Accepted
 // Submitted   2026-08-01, 07:36 p.m.
+// Technique   single-pass-diagonal-summation
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm iterates through the matrix rows once, simultaneously accumulating the primary diagonal element at index [m][m] and the secondary diagonal element at index [m][n-m].
+// Interview   Before: "How would you calculate the diagonal difference?" After: "I iterate through the matrix once, using the row index to access both diagonals in O(n) time. By calculating the primary diagonal [m][m] and secondary diagonal [m][n-m] simultaneously, I avoid redundant traversals while maintaining O(1) auxiliary space."
+// Pitfalls    (1) Incorrectly calculating the secondary diagonal index as [m][m+1] instead of [m][n-m] leads to an out-of-bounds access or incorrect summation.  (2) Failing to use the absolute value function abs() on the final difference violates the problem requirement for the absolute difference.  (3) Initializing the secondary diagonal index using the matrix size instead of size-1 causes an index-out-of-bounds error on the first iteration.
 // ──────────────────────────────────────────────────
 
 #include <bits/stdc++.h>
