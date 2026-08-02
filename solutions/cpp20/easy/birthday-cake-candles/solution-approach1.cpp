@@ -7,6 +7,12 @@
 // Language    cpp20
 // Status      Accepted
 // Submitted   2026-08-02, 01:40 p.m.
+// Technique   two-pass-max-counting
+// Time        O(n)
+// Space       O(n)
+// Insight     The algorithm identifies the maximum candle height in the first pass and counts its occurrences in the second pass.
+// Interview   Before: "I would sort the array to find the largest element." After: "Sorting takes O(n log n), but a two-pass approach achieves O(n) time complexity by finding the maximum first, which is optimal for this problem."
+// Pitfalls    (1) Initializing the maximum variable to zero instead of INT_MIN, which fails if all candle heights are negative.  (2) Attempting to count the maximum in a single pass without knowing the maximum value beforehand.
 // ──────────────────────────────────────────────────
 
 #include <bits/stdc++.h>
