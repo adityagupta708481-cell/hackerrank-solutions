@@ -7,6 +7,12 @@
 // Language    cpp20
 // Status      Accepted
 // Submitted   2026-08-02, 01:36 p.m.
+// Technique   total-sum-minus-extremes
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm calculates the total sum of all elements and subtracts the maximum element to find the minimum sum, and subtracts the minimum element to find the maximum sum.
+// Interview   Before: "I should sort the array and sum the first four and last four elements." After: "Sorting takes O(n log n), but we can achieve O(n) time by calculating the total sum and subtracting the min and max values, which handles the 64-bit integer requirement efficiently."
+// Pitfalls    (1) Failing to use a 64-bit integer for the sum, which causes overflow since the sum of five large integers can exceed the 32-bit signed integer limit.  (2) Initializing the minimum and maximum variables with values that are not within the range of the input integers, leading to incorrect results.
 // ──────────────────────────────────────────────────
 
 #include <bits/stdc++.h>
