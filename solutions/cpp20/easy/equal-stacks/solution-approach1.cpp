@@ -7,6 +7,12 @@
 // Language    cpp20
 // Status      Accepted
 // Submitted   2026-08-04, 03:51 p.m.
+// Technique   greedy-three-pointer-sum-reduction
+// Time        O(n1 + n2 + n3)
+// Space       O(1)
+// Insight     The algorithm maintains the current sum of each stack and greedily reduces the tallest stack until all three sums are equal.
+// Interview   Before: "I would use a hash map to store all possible prefix sums for each stack." After: "That is unnecessary; since we only need the maximum common height, we can use three pointers to greedily reduce the tallest stack in O(n1 + n2 + n3) time and O(1) space."
+// Pitfalls    (1) Failing to handle the case where stacks become empty, which results in a height of zero.  (2) Assuming the stacks are sorted, which is not guaranteed by the problem statement.  (3) Accessing indices beyond the stack size when the stack is already empty.
 // ──────────────────────────────────────────────────
 
 #include <bits/stdc++.h>
