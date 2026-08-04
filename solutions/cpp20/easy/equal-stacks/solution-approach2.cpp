@@ -7,6 +7,12 @@
 // Language    cpp20
 // Status      Accepted
 // Submitted   2026-08-04, 04:18 p.m.
+// Technique   greedy-three-pointer-sum-reduction
+// Time        O(n1 + n2 + n3)
+// Space       O(1)
+// Insight     The algorithm iteratively reduces the height of the tallest stack by removing its top cylinder until all three stacks reach an identical total height.
+// Interview   Before: "I would use a hash map to store all possible prefix sums for each stack." After: "Instead, I use three pointers to track the current top of each stack, reducing the tallest one in O(n1 + n2 + n3) time and O(1) space, which handles the empty stack case naturally."
+// Pitfalls    (1) Failing to account for the case where all stacks are already equal, which the code handles by checking equality before any removal.  (2) Assuming the stacks must be non-empty, whereas the problem explicitly states an empty stack is still a valid stack with height zero.
 // ──────────────────────────────────────────────────
 
 #include <bits/stdc++.h>
