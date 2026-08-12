@@ -7,6 +7,12 @@
 // Language    cpp14
 // Status      Accepted
 // Submitted   2026-08-12, 11:50 a.m.
+// Technique   reverse-bribe-counting
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm validates the chaotic condition by checking if any person moved more than two positions forward and counts total bribes by identifying how many people originally behind the current person are now in front.
+// Interview   Before: "I would simulate the swaps directly." After: "Instead, I iterate through the queue and check if each person's current position minus their original position exceeds two. If not, I count how many people originally behind them are now ahead, resulting in an O(n) time complexity solution."
+// Pitfalls    (1) Failing to check the chaotic condition q[i] - (i + 1) > 2 before counting bribes.  (2) Incorrectly setting the inner loop range, which must start from max(0, q[i] - 2) to only count relevant preceding elements.  (3) Assuming the queue is 0-indexed when calculating the original position, which is actually (i + 1).
 // ──────────────────────────────────────────────────
 
 #include <bits/stdc++.h>
