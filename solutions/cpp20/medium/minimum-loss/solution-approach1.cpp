@@ -7,6 +7,12 @@
 // Language    cpp20
 // Status      Accepted
 // Submitted   2026-08-19, 11:45 a.m.
+// Technique   sorting-with-index-tracking
+// Time        O(n log n)
+// Space       O(n)
+// Insight     The algorithm identifies the minimum loss by sorting prices while preserving original indices, then checking adjacent sorted elements to ensure the sell price occurs after the buy price.
+// Interview   Before: "I could use a nested loop to compare every pair, but that is O(n^2)." After: "By sorting the prices and tracking their original indices, I can find the minimum valid loss in O(n log n) time, ensuring the sell year is strictly greater than the buy year."
+// Pitfalls    (1) Failing to verify that the sell price index is greater than the buy price index, which violates the requirement that the house must be bought before it is sold.  (2) Using an integer type for the loss calculation that might overflow if the price difference exceeds the capacity of a 32-bit signed integer.
 // ──────────────────────────────────────────────────
 
 #include <bits/stdc++.h>
