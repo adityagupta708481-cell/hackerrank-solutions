@@ -7,6 +7,12 @@
 // Language    cpp20
 // Status      Accepted
 // Submitted   2026-08-19, 11:56 a.m.
+// Technique   hash-set-lookup
+// Time        O(n)
+// Space       O(n)
+// Insight     The algorithm iterates through each unique element in the set and checks for the existence of its complement, defined as the element plus the target difference k, in constant time.
+// Interview   Before: "I would sort the array and use two pointers to find pairs with difference k." After: "Using an unordered_set allows for O(n) time complexity by performing O(1) lookups for each element's complement, which is more efficient than sorting for this problem."
+// Pitfalls    (1) The implementation assumes all input integers are unique as per the problem constraints, which simplifies the logic by avoiding duplicate pair counting.  (2) The code does not explicitly handle negative values for k, though the problem implies k is a target difference.
 // ──────────────────────────────────────────────────
 
 #include <bits/stdc++.h>
