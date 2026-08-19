@@ -7,6 +7,12 @@
 // Language    cpp20
 // Status      Accepted
 // Submitted   2026-08-19, 12:17 p.m.
+// Technique   sorting-greedy-matching
+// Time        O(n log n)
+// Space       O(1)
+// Insight     Sorting one array in ascending order and the other in descending order ensures that the smallest elements of the first array are paired with the largest elements of the second to maximize the sum of each pair.
+// Interview   Before: "I would try all permutations to see if any satisfy the condition." After: "That is O(n!) which is too slow. By sorting A ascending and B descending, we can check the condition in O(n log n) time, which is optimal for this problem."
+// Pitfalls    (1) Sorting both arrays in the same order fails to maximize the potential sum of pairs.  (2) Failing to handle the case where n=0, although constraints imply n >= 1.  (3) Assuming the arrays are already sorted, which is not guaranteed by the input format.
 // ──────────────────────────────────────────────────
 
 #include <bits/stdc++.h>
