@@ -6,7 +6,7 @@
 // Platform    HackerRank
 // Language    cpp20
 // Status      Accepted
-// Submitted   2026-09-07, 09:40 p.m.
+// Submitted   2026-09-07, 09:43 p.m.
 // ──────────────────────────────────────────────────
 
 #include <bits/stdc++.h>
@@ -34,18 +34,14 @@ string solve(int n) {
         for (char c : s) {
             rem = (rem * 10 + (c - '0')) % n;
         }
-
         if (rem == 0) {
             return s;
         }
-
         q.push(s + "0");
         q.push(s + "9");
     }
-
     return "";
 }
-
 int main()
 {
     ofstream fout(getenv("OUTPUT_PATH"));
