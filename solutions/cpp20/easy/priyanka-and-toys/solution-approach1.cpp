@@ -7,6 +7,12 @@
 // Language    cpp20
 // Status      Accepted
 // Submitted   2026-09-08, 04:36 p.m.
+// Technique   sorting-and-greedy-linear-scan
+// Time        O(N log N)
+// Space       O(1)
+// Insight     The algorithm sorts the weights and greedily groups all items within a four-unit range of the current minimum weight into a single container.
+// Interview   Before: "I would use a hash map to count frequencies." After: "Sorting is more efficient here, allowing an O(N log N) greedy approach to group items by the weight constraint, which is optimal for this problem."
+// Pitfalls    (1) The code contains a redundant increment in the return statement (cnt++) which does not affect the final result but is logically incorrect.  (2) Failing to sort the input array prevents the greedy strategy from correctly identifying the minimum weight item for each container.  (3) Assuming the container limit is a fixed count rather than a relative range based on the minimum weight item.
 // ──────────────────────────────────────────────────
 
 #include <bits/stdc++.h>
