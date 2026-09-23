@@ -7,6 +7,12 @@
 // Language    cpp20
 // Status      Accepted
 // Submitted   2026-09-23, 12:28 p.m.
+// Technique   directional-distance-minimization
+// Time        O(k)
+// Space       O(k)
+// Insight     The algorithm calculates the maximum possible distance in each of the eight directions and iteratively reduces these distances whenever an obstacle is encountered along that specific path.
+// Interview   Before: "I would simulate the board using a 2D array to mark obstacles and count reachable cells." After: "That would be O(n^2), which fails for large n. Instead, I track the distance to the nearest obstacle in each of the eight directions, achieving O(k) time complexity."
+// Pitfalls    (1) Failing to account for the queen's position being excluded from the distance calculation, which requires subtracting 1 from the distance to the obstacle.  (2) Incorrectly identifying diagonal obstacles by assuming they must share a row or column index rather than checking the absolute difference of coordinates.  (3) Assuming obstacles are sorted by distance, whereas the code correctly handles unsorted input by updating the minimum distance found so far.
 // ──────────────────────────────────────────────────
 
 #include <bits/stdc++.h>
