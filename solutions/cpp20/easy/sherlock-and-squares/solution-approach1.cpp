@@ -7,6 +7,12 @@
 // Language    cpp20
 // Status      Accepted
 // Submitted   2026-09-23, 12:37 p.m.
+// Technique   mathematical-range-boundary-calculation
+// Time        O(1)
+// Space       O(1)
+// Insight     The number of perfect squares in an inclusive range [a, b] is determined by the count of integers whose squares fall within the interval, calculated as the difference between the floor of the square root of b and the ceiling of the square root of a, plus one.
+// Interview   Before: "I would iterate from a to b and check if each number is a perfect square." After: "That would be O(b-a), which is inefficient. Instead, I calculate the range of roots [ceil(sqrt(a)), floor(sqrt(b))] in O(1) time, which handles the constraints effectively."
+// Pitfalls    (1) Failing to handle cases where the calculated range is invalid, resulting in a negative count when m > n.  (2) Using integer division or truncation incorrectly when calculating the ceiling of the square root of a.  (3) Assuming the range [a, b] always contains at least one square integer.
 // ──────────────────────────────────────────────────
 
 #include <bits/stdc++.h>
